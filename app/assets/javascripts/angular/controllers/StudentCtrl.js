@@ -2,7 +2,6 @@ student.controller('StudentCtrl', [
   '$scope', '$location', '$http', function($scope, $location, $http) {
     $scope.students = [];
     $scope.active  = '';
-    $scope.department  = 'English';
     $http.get('/stud_data').success(function(data) {
       $scope.students = data;
     });

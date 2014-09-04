@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20140728015233) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "department_id"
+    t.string   "code"
+    t.integer  "grade_id"
   end
 
   create_table "courses_takens", force: true do |t|
@@ -54,6 +56,21 @@ ActiveRecord::Schema.define(version: 20140728015233) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "taken_courses", force: true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_types", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_types", ["name"], name: "index_user_types_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -23,3 +23,4 @@ app/views/departments/index.html.haml
 app/views/departments/new.html.haml
 app/views/departments/show.html.haml
 app/views/welcome/get_courses.js.erb
+sportal.esproj/user.esonafomuso.espressostorage
